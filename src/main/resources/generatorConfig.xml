@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <classPathEntry	location="D:\repository\mysql\mysql-connector-java\5.1.37\mysql-connector-java-5.1.37.jar" />
+	<context id="orcal">
+		<property name="javaFileEncoding" value="UTF-8"/>
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		<!-- <commentGenerator type="com.qhpay.utils.AlanCommentGenerator">
+			<property name="javaFileEncoding" value="UTF-8" />
+			<property name="suppressAllComments" value="false"/>是否取消注释
+			<property name="suppressDate" value="true" /> 是否生成注释代时间戳
+		</commentGenerator> -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/master" userId="root"	password="123456">
+		</jdbcConnection>
+		
+		<javaModelGenerator targetPackage="com.masterslave.model"	targetProject="masterslave/src/main/java" />
+		
+		<sqlMapGenerator targetPackage="com.masterslave.mapper"	targetProject="masterslave/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		
+		<javaClientGenerator type="XMLMAPPER"	targetPackage="com.masterslave.mapper" targetProject="masterslave/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+		<!-- SystemSequence,SystemDictionary -->
+		<table tableName="User" domainObjectName="User"
+			enableUpdateByExample="true" enableCountByExample="true" 
+			enableDeleteByExample="true" enableDeleteByPrimaryKey="true" 
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"  
+			enableSelectByPrimaryKey="true" enableInsert="true">
+			<columnRenamingRule searchString="^.+_"	replaceString="" />
+		</table>
+	</context>
+</generatorConfiguration>
