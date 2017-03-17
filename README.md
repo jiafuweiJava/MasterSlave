@@ -1,5 +1,5 @@
 # MasterSlave
-SSM框架 采用Spring AOP 动态切换数据库 进行mysql的读写分离
+SSM框架 采用Spring AOP 动态切换数据库进行读写分离  mysql采用主从同步
 ---
 [MySql数据库主从复制设置](http://blog.csdn.net/justdb/article/details/13168569)
 ---
